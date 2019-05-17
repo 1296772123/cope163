@@ -1,6 +1,8 @@
 <template>
 	<div>
-    classification
+    <div>
+      classification
+    </div>
   </div>
 </template>
 
