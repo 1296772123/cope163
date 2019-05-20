@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <title>project</title>
   <link rel="stylesheet" href="/static/css/reset.css">
-  <link rel="stylesheet" href="http://at.alicdn.com/t/font_1174516_55nbdadipu5.css">
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_1174516_hcf5wcrpfcu.css">
 </head>
 <body>
 <div id="app"></div>
 <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
-<script type="text/javascript">
+<script>
   // 解决点击响应延时0.3s问题
   if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function () {
@@ -22,9 +22,10 @@
   }
   
   // 取消浏览器默认行为
-  document.addEventListener('touchstart', function (event) {
-    event.preventDefault() //a元素不能进行跳转
-  })
+  // document.addEventListener('touchstart', function (event) {
+  //   event.preventDefault() //a元素不能进行跳转
+  // })
+  
   // 点透处理
   const a = document.querySelectorAll('a')
   for (let i = 0; i < a.length; i++) {

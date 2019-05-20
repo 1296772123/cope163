@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <router-view></router-view>
-    <FooterNav></FooterNav>
+    <FooterNav v-show="$route.meta.isShow"></FooterNav>
   </div>
 </template>
 
@@ -12,12 +12,13 @@
     name: 'App',
     components: {
       FooterNav
-    }
+    },
+    
   }
 </script>
 
 <style lang="stylus" scoped>
-.app
-  width 100%
-  height 100%
+  .app
+    width 100%
+    height 100%
 </style>
