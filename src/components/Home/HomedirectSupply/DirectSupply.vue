@@ -1,5 +1,5 @@
 <template>
-
+  
   <div class="DirectSupply">
     <div class="DireCtTitle">
       <span>品牌制造商直供</span>
@@ -10,34 +10,33 @@
     </div>
     <div class="DireCtImage">
       
-      <a href="http://localhost:8080/homepage" style="background-image: url(https://yanxuan.nosdn.127.net/74e2ea8f81004d0a60f90fc8e4649058.png?imageView&thumbnail=343y260&enlarge=1)">
-      
-        <h3>海外制造商</h3>
-        <h4>9.9元起步</h4>
+      <a
+        v-for="(presonalShops ,index) in personalshop"
+        :key="presonalShops.id"
+        :href="presonalShops.listPicUrl"
+        :style="{backgroundImage:'url('+presonalShops.webIndexVerticalPicUrl+')'}"
+      >
         
-      </a>
+        <h3>{{presonalShops.name}}</h3>
+        <h4>{{presonalShops.floorPrice}}元起步</h4>
       
-      <a href="http://localhost:8080/homepage" style="background-image: url(https://yanxuan.nosdn.127.net/c097be14110f769d58245cdad73e15c3.png?imageView&thumbnail=343y260&enlarge=1)">
-        <h3>CK制造商</h3>
-        <h4>9.9元起步</h4>
       </a>
-      
-      <a href="http://localhost:8080/homepage" style="background-image: url(https://yanxuan.nosdn.127.net/66a23d776f41cba70d00803a5231124b.png?imageView&thumbnail=343y260&enlarge=1)">
-        <h3>新秀丽制造商</h3>
-        <h4>9.9元起步</h4>
-      </a>
-      
-      <a href="http://localhost:8080/homepage" style="background-image: url(https://yanxuan.nosdn.127.net/3bf5a8a2f6eef284ecb40806ae9ce043.png?imageView&thumbnail=343y260&enlarge=1)">
-        <h3>Nine West制造商</h3>
-        <h4>9.9元起步</h4>
-      </a>
+    
     </div>
   </div>
 </template>
 
 <script>
+  import {mapState} from 'vuex'
+  
   export default {
-    name: 'DirectSupply'
+    name: 'DirectSupply',
+    computed: {
+      ...mapState({
+        personalshop: state => state.home.personalshop
+      })
+    }
+    
   }
 </script>
 
@@ -49,7 +48,7 @@
     height 555px
     margin 0 auto
     border-radius 10px
-    
+    overflow: hidden;
     box-sizing border-box
     
     .DireCtTitle
@@ -74,7 +73,8 @@
       width 100%
       height 495px
       overflow hidden
-      padding  0 15px 20px 10px
+      padding 0 15px 20px 10px
+      
       a
         text-align center
         float left
@@ -82,7 +82,9 @@
         height 50%
         box-sizing border-box
         border: 10px solid white;
-        background-size  95% 95%
+        background-size 100% 100%
+        background-position bottom
+        
         h4
           color gray
 </style>

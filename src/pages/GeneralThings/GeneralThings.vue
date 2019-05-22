@@ -419,7 +419,8 @@
           
           img
             margin-top 30px
-            width 100%
+            width 90%
+            height 80%
             border-radius 10px
 
 </style>

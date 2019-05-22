@@ -41,42 +41,26 @@
       </div>
     </div>
     <div class="MaskList" v-show="!pageIsshow">
-        <span class="EachItem">
-          <span>推荐</span>
-        </span>
-      <span class="EachItem">
-          <span>居家生活</span>
-        </span>
-      <span class="EachItem">
-          <span>服饰鞋包</span>
-        </span>
-      <span class="EachItem">
-          <span>美食酒水</span>
-        </span>
-      <span class="EachItem">
-          <span>个护清洁</span>
-        </span>
-      <span class="EachItem">
-          <span>母婴亲子</span>
-        </span>
-      <span class="EachItem">
-          <span>运动旅游</span>
-        </span>
-      <span class="EachItem">
-          <span>数码家电</span>
-        </span>
-      <span class="EachItem">
-          <span>全球特色</span>
+        <span
+          class="EachItem"
+          @click="isShowActive(index)"
+          v-for="(navList,index) in navigations" :key="index"
+        >
+          <span
+            :class="{on:index===isBottomBorder}"
+          >
+            {{navList.text}}
+          </span>
         </span>
     </div>
     <div class="MaskBottom" v-show="!pageIsshow" @click="pageIsshow = !pageIsshow"></div>
     
     
     <div class="Container">
-      <scroller>
+      <div>
         <HomeSwiper/>
         <HomeCommitment/>
-        <HomeListGoods/>
+        <HomeListGoods :navigations="navigations"/>
         <Frame/>
         <HomeExclusive/>
         <Frame/>
@@ -93,8 +77,7 @@
         <HomeTheFourPictures/>
         <Frame/>
         <HomeBetterScroll/>
-      </scroller>
-    
+      </div>
     </div>
   
   
@@ -174,12 +157,17 @@
             scrollY: false,
             click: false,
           })
+          this.Bscroll = new BScroll('.Container', {
+            scrollY: true,
+            scrollX: false,
+          })
+          // this.Bscroll.options.freeScroll = false
         } else {
           this.Bscroll.refresh()
         }
         
       })
-      this.$store.dispatch('homeData')
+      
     },
     
   }
@@ -281,6 +269,7 @@
             font-size 30px
             margin 0 20px
             line-height 60px
+            
             &.active
               bottom-border-2px(#b4282d)
             
@@ -407,6 +396,9 @@
           border 1.5px solid #CCC;
           border-radius 10px
           background: #FAFAFA;
-
+          
+          &.on
+            border 1px solid #b4282d
+            color #b4282d
 
 </style>

@@ -5,62 +5,14 @@
       <span>更多<i class="iconfont iconyoujiantou"></i></span>
     </div>
     <ul class="BuyList">
-      <li class="BuyItem">
+      <li class="BuyItem" v-for="newItem in newitemlist6" :key="newItem.id">
         <a href="">
-          <img src="https://yanxuan.nosdn.127.net/35893a4f18ebf7af0f018e2918c1d630.png?imageView&thumbnail=216x216&quality=75" alt="">
+          <img
+            :src="newItem.listPicUrl"
+            alt="">
           <div>
-            <span>烟台美早大樱桃 2斤装</span>
-            <span class="Price">￥135</span>
-            <span class="Goods">好货内部价</span>
-          </div>
-        </a>
-      </li>
-      <li class="BuyItem">
-        <a href="">
-          <img src="https://yanxuan.nosdn.127.net/355e0781cabbdfa084bf947aabceacf0.png?imageView&thumbnail=216x216&quality=75" alt="">
-          <div>
-            <span>烟台美早大樱桃 2斤装</span>
-            <span class="Price">￥135</span>
-            <span class="Goods">520特惠</span>
-          </div>
-        </a>
-      </li>
-      <li class="BuyItem">
-        <a href="">
-          <img src="https://yanxuan.nosdn.127.net/b71226b22d365ce2d8a3428a44a31835.png?imageView&thumbnail=216x216&quality=75" alt="">
-          <div>
-            <span>烟台美早大樱桃 2斤装</span>
-            <span class="Price">￥135</span>
-            <span class="Goods">每满199减30券</span>
-          </div>
-        </a>
-      </li>
-      <li class="BuyItem">
-        <a href="">
-          <img src="https://yanxuan.nosdn.127.net/7647f4270436fe0c2dd63866486a55ef.png?imageView&thumbnail=216x216&quality=75" alt="">
-          <div>
-            <span>烟台美早大樱桃 2斤装</span>
-            <span class="Price">￥135</span>
-            <span class="Goods">好货内部价</span>
-          </div>
-        </a>
-      </li>
-      <li class="BuyItem">
-        <a href="">
-          <img src="https://yanxuan.nosdn.127.net/233d38636a0c203deca09d74f89ae3b2.png?imageView&thumbnail=216x216&quality=75" alt="">
-          <div>
-            <span>烟台美早大樱桃 2斤装</span>
-            <span class="Price">￥135</span>
-            <span class="Goods">好货内部价</span>
-          </div>
-        </a>
-      </li>
-      <li class="BuyItem">
-        <a href="">
-          <img src="https://yanxuan.nosdn.127.net/6819a1722531841ac809a7dd973956bb.png?imageView&thumbnail=216x216&quality=75" alt="">
-          <div>
-            <span>烟台美早大樱桃 2斤装</span>
-            <span class="Price">￥135</span>
+            <span>{{newItem.name}}</span>
+            <span class="Price">￥{{newItem.counterPrice}}</span>
             <span class="Goods">好货内部价</span>
           </div>
         </a>
@@ -71,15 +23,20 @@
 </template>
 
 <script>
+  import {mapState, mapGetters} from 'vuex'
+  
   export default {
-    name: 'NewArrival'
+    name: 'NewArrival',
+    computed: {
+      ...mapGetters(['newitemlist6'])
+    }
   }
 </script>
 
 <style lang="stylus" scoped>
   .NewArrival
     width 95%
-    height 630px
+    height 650px
     margin 0 auto
     
     .HomeBuyTitle
@@ -94,10 +51,12 @@
         &:nth-child(2)
           float right
           font-size 30px
+      
       .Time
         margin-left 10px
         background black
         color white
+      
       i
         font-size 30px
     
@@ -116,20 +75,25 @@
           width 100%
           height 100%
           display inline-block
+          
           img
             background-color #F5F5F5
             margin 0 auto
             width 80%
             height 55%
+          
           div
             width 80%
             height 45%
             margin 0 auto
+            
             span
               font-size 22px
+            
             .Price
               color #B4282D
               font-size 22px
+            
             .Goods
               text-align center
               display block

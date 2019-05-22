@@ -13,6 +13,9 @@
     components: {
       FooterNav
     },
+    mounted () {
+      this.$store.dispatch('homeData')
+    }
     
   }
 </script>

@@ -6,51 +6,14 @@
       <span class="Time">00</span> : <span class="Time">00</span> : <span class="Time">00</span>
     </div>
     <ul class="BuyList">
-      <li class="BuyItem">
+      <li class="BuyItem" v-for="item in itemList" :key="item.itemId">
         <a href="">
-          <img src="https://yanxuan.nosdn.127.net/35893a4f18ebf7af0f018e2918c1d630.png?imageView&thumbnail=216x216&quality=75" alt="">
+          <img
+            :src="item.picUrl"
+            alt="">
           <div>
-            <span>￥135</span><del>￥159</del>
-          </div>
-        </a>
-      </li>
-      <li class="BuyItem">
-        <a href="">
-          <img src="https://yanxuan.nosdn.127.net/355e0781cabbdfa084bf947aabceacf0.png?imageView&thumbnail=216x216&quality=75" alt="">
-          <div>
-            <span>￥135</span><del>￥159</del>
-          </div>
-        </a>
-      </li>
-      <li class="BuyItem">
-        <a href="">
-          <img src="https://yanxuan.nosdn.127.net/b71226b22d365ce2d8a3428a44a31835.png?imageView&thumbnail=216x216&quality=75" alt="">
-          <div>
-            <span>￥135</span><del>￥159</del>
-          </div>
-        </a>
-      </li>
-      <li class="BuyItem">
-        <a href="">
-          <img src="https://yanxuan.nosdn.127.net/7647f4270436fe0c2dd63866486a55ef.png?imageView&thumbnail=216x216&quality=75" alt="">
-          <div>
-            <span>￥135</span><del>￥159</del>
-          </div>
-        </a>
-      </li>
-      <li class="BuyItem">
-        <a href="">
-          <img src="https://yanxuan.nosdn.127.net/233d38636a0c203deca09d74f89ae3b2.png?imageView&thumbnail=216x216&quality=75" alt="">
-          <div>
-            <span>￥135</span><del>￥159</del>
-          </div>
-        </a>
-      </li>
-      <li class="BuyItem">
-        <a href="">
-          <img src="https://yanxuan.nosdn.127.net/6819a1722531841ac809a7dd973956bb.png?imageView&thumbnail=216x216&quality=75" alt="">
-          <div>
-            <span>￥135</span><del>￥159</del>
+            <span>￥{{item.activityPrice}}</span>
+            <del>￥{{item.originPrice}}</del>
           </div>
         </a>
       </li>
@@ -60,8 +23,15 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex'
+  
   export default {
-    name: 'TheHottest'
+    name: 'TheHottest',
+    computed: {
+      ...mapState({
+        itemList: state => state.home.flashsalemodule
+      })
+    }
   }
 </script>
 
@@ -83,10 +53,12 @@
         &:nth-child(2)
           float right
           font-size 30px
+      
       .Time
-          margin-left 10px
-          background black
-          color white
+        margin-left 10px
+        background black
+        color white
+      
       i
         font-size 30px
     
@@ -105,11 +77,13 @@
           width 100%
           height 100%
           display inline-block
+          
           img
             background-color #F5F5F5
             margin 0 auto
             width 90%
             height 80%
+          
           div
             width 100%
             height 20%
@@ -118,6 +92,7 @@
               vertical-align middle
               color #B4282D
               font-size 30px
+            
             del
               vertical-align middle
               font-size 25px

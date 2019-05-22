@@ -12,25 +12,15 @@
         <img src="http://yanxuan.nosdn.127.net/ba4d635ec94ad95b28bfab6500900659.png" alt="">
       </div>
       <div class="RightImage">
-        <a href="http://localhost:8080/homepage">
-          <div class="ImageTop">
-            <div class="Position">
-              <p>福利社</p>
-              <p>今日特价</p>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/e75693a49d0f2645513d5ef9489c5ecc.png?imageView&thumbnail=200x200&quality=75"
-              alt="">
-          </div>
-        </a>
-        <a href="http://localhost:8080/homepage">
+        <a :href="kingKongs.targetUrl" v-for="(kingKongs,index) in kingKong" :key="index">
           <div class="ImageBottom">
             <div class="Position">
-              <p>新人拼团</p>
-              <p>1元起包邮</p>
+              <p>{{kingKongs.title}}</p>
+              <p>{{kingKongs.subTitle}}</p>
+              <p class="TonyHan">{{kingKongs.tag}}</p>
             </div>
             <img
-              src="https://yanxuan.nosdn.127.net/9dda6ba19c27f7403acda49f610ff03c.png?imageView&thumbnail=200x200&quality=75"
+              :src="kingKongs.picUrl"
               alt="">
           </div>
         </a>
@@ -40,8 +30,15 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex'
+  
   export default {
-    name: 'NewExclusive'
+    name: 'NewExclusive',
+    computed: {
+      ...mapState({
+        kingKong: state => state.home.kingKongList
+      })
+    }
   }
 </script>
 
@@ -114,6 +111,7 @@
               &:nth-child(2) {
                 color #333333
               }
+              
           
           img
             float right
@@ -140,6 +138,10 @@
               }
               
               &:nth-child(2) {
+                font-size 26px
+                color #7F7F7F
+              }
+              &:nth-child(3) {
                 font-size 26px
                 background-color #CBB693
                 color #333333

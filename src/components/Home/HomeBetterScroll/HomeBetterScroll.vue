@@ -1,739 +1,94 @@
 <template>
+  
   <div>
-    <div class="HomeBetterScroll">
+    <div class="content"
+         v-for="(categorymodule,index) in categorymodules" :key="index"
+    >
       <div class="BetterTop">
-        <a href="">
+        <a :href="categorymodule.titleSchemeUrl">
           <img
-            src="https://yanxuan.nosdn.127.net/c0a49c73e5c8cd794be7a7c3a9c80cca.jpg?imageView&thumbnail=750x0&quality=75"
+            :src="categorymodule.titlePicUrl"
             alt="">
         </a>
       </div>
-      <div class="BetterBottom">
-        <ul class="BottomList">
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/aef3c8ec5ad59187e2975492a56dbfd7.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-        </ul>
-      </div>
+      <BetterScroll :categorymodule="categorymodule" :index="index"/>
+      <Frame/>
     </div>
-    <Frame/>
-    
-    <div class="HomeBetterScroll">
-      <div class="BetterTop">
-        <a href="">
-          <img
-            src="https://yanxuan.nosdn.127.net/c0a49c73e5c8cd794be7a7c3a9c80cca.jpg?imageView&thumbnail=750x0&quality=75"
-            alt="">
-        </a>
-      </div>
-      <div class="BetterBottom">
-        <ul class="BottomList">
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/aef3c8ec5ad59187e2975492a56dbfd7.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <Frame/>
-    
-    <div class="HomeBetterScroll">
-      <div class="BetterTop">
-        <a href="">
-          <img
-            src="https://yanxuan.nosdn.127.net/c0a49c73e5c8cd794be7a7c3a9c80cca.jpg?imageView&thumbnail=750x0&quality=75"
-            alt="">
-        </a>
-      </div>
-      <div class="BetterBottom">
-        <ul class="BottomList">
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/aef3c8ec5ad59187e2975492a56dbfd7.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <Frame/>
-    
-    <div class="HomeBetterScroll">
-      <div class="BetterTop">
-        <a href="">
-          <img
-            src="https://yanxuan.nosdn.127.net/c0a49c73e5c8cd794be7a7c3a9c80cca.jpg?imageView&thumbnail=750x0&quality=75"
-            alt="">
-        </a>
-      </div>
-      <div class="BetterBottom">
-        <ul class="BottomList">
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/aef3c8ec5ad59187e2975492a56dbfd7.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <Frame/>
-    
-    <div class="HomeBetterScroll">
-      <div class="BetterTop">
-        <a href="">
-          <img
-            src="https://yanxuan.nosdn.127.net/c0a49c73e5c8cd794be7a7c3a9c80cca.jpg?imageView&thumbnail=750x0&quality=75"
-            alt="">
-        </a>
-      </div>
-      <div class="BetterBottom">
-        <ul class="BottomList">
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/aef3c8ec5ad59187e2975492a56dbfd7.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-          <li>
-            <div class="Position">
-              <div>大</div>
-              <div>溪</div>
-              <div>地</div>
-              <div>珍</div>
-              <div>珠</div>
-            </div>
-            <img
-              src="https://yanxuan.nosdn.127.net/d9376c059ce15a774199e2cedc5a8d63.png?imageView&quality=65&thumbnail=330x330"
-              alt="">
-            <span class="Left">全净皓齿变速式声波电动牙刷</span>
-            <span class="center">￥179</span>
-            <del>￥219</del>
-            <span class="Right">520特惠</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <Frame/>
   </div>
+
 </template>
 
 <script>
-  import BScroll from 'better-scroll'
+  
+  import {mapState} from 'vuex'
+  import BetterScroll from './betterScroll/betterScroll'
   
   export default {
     name: 'HomeBetterScroll',
-    mounted () {
-      this.Bscroll = new BScroll('.BetterBottom', {
-        scrollX: true,
-        scrollY: false,
+    components: {
+      BetterScroll
+    },
+    
+    data () {
+      return {
+        BetterScrollIndex: 0
+      }
+    },
+    
+    computed: {
+      // listenshowpage1 () {
+      //   return this.$store.state.categoryModule
+      // },
+      ...mapState({
+        categorymodules: state => state.home.categoryModule
       })
-      // this.Bscroll.options.freeScroll = false
-    }
+      
+    },
+    
+    // updated () {
+    //
+    //   let that = this
+    //   this.$nextTick(() => {
+    //     if (!this.categorymodules) return
+    //     console.log(this.categorymodules)
+    //     console.log(this.$refs, 'refs')
+    //
+    //     //$refs绑定元素
+    //     this.categorymodules.forEach((item, index) => {
+    //       console.log(item, index, 'index')
+    //       new BScroll(this.$refs.test1, {
+    //         //开启点击事件 默认为false
+    //         click: true,
+    //         scrollX: true
+    //       })
+    //       if (!that.scroll[index]) {
+    //         that.scroll[index] = new BScroll(that.$refs.index[index], {
+    //           //开启点击事件 默认为false
+    //           click: true,
+    //           scrollX: true,
+    //           scrollY: true
+    //         })
+    //         // console.log(this.scroll)
+    //       } else {
+    //         that.scroll[index].refresh()
+    //       }
+    //     })
+    //   })
+    //
+    // },
+    // watch: {
+    //   listenshowpage1: (old, newd) => {
+    //     console.log(old, newd, '----------')
+    //   },
+    //   categorymodules (newValue) {
+    //
+    //   }
+    // }
   }
 </script>
 
 <style lang="stylus" scoped>
-  .HomeBetterScroll
+  .content
     width 100%
     height 800px
     
@@ -749,50 +104,6 @@
         img
           width 100%
           height 100%
-    
-    .BetterBottom
-      display flex
-      
-      .BottomList
-        position relative
-        display flex
-        box-sizing border-box
-        
-        .Position
-          position absolute
-          margin-left 20px
-          top 20px
-          padding 10px 6px
-          font-size 20px
-          color #B4A078
-          border 1px solid #B4A078
-        
-        img
-          border 15px solid white
-          background-color #F4F4F4
-        
-        span
-          margin-left 15px
-          font-size 25px
-          margin-top 15px
-        
-        del
-          display inline-block
-          font-size 24px
-          color #A7A7A7
-        
-        .Left
-          display block
-        
-        .center
-          font-size 28px
-        
-        .Right
-          display inline-block
-          font-size 20px
-          color #B4282D
-          border-radius 5px
-          padding 0 15px
-          box-sizing border-box
-          border 1px solid #B4282D
+
+
 </style>

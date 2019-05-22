@@ -83,8 +83,16 @@
 </template>
 
 <script>
+  
+  import {mapState} from 'vuex'
+  
   export default {
-    name: 'SellLikeHotCakes'
+    name: 'SellLikeHotCakes',
+    computed: {
+      ...mapState({
+        popularItemList: state => state.home.popularItemList
+      })
+    }
   }
 </script>
 
@@ -103,6 +111,7 @@
       height 10%
       font-size 30px
       line-height 60px
+    
     .SellLike
       display flex
       align-items center

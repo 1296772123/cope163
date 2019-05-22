@@ -7,10 +7,12 @@ import mutations from './TotalWarehouse/mutations'
 import actions from './TotalWarehouse/actions'
 
 import home from './modules/home'
+import category from './modules/category'
 
 export default new Vuex.Store({
   state, mutations, actions,
   modules: {
     home,// home = state => state.home.state
+    category
   }
 })
