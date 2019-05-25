@@ -38,7 +38,6 @@
           this.Scroll = new BScroll('.Container', {click: true, scrollY: true})
         }
       })
-      
     },
     
     computed: {

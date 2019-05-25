@@ -1,31 +1,28 @@
 <template>
   <div>
-    <Search/>
     
     <div class="Login">
-      <router-view></router-view>
       <div class="LoginFrom">
         <div class="logoWrap">
           <img src="http://yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
         </div>
-        
+        <form action="">
+          <div><input type="text" placeholder="邮箱账号"/></div>
+          <div><input type="text" placeholder="密码"/></div>
+          <div class="issue">
+            <div @click="toPath('/personal/register')">注册账号？</div>
+            <div>忘记密码</div>
+          </div>
+        </form>
         <div class="EmailAndAccount">
           <div class="phoneLogin">
-            <div @click="toPath('/personal/phone')"><i class="iconfont iconshouji"></i><span>手机号码登陆</span></div>
+            <div><span>登陆</span></div>
           </div>
-          <div class="EmailLogin">
-            <div @click="toPath('/personal/email')"><i class="iconfont icontubiao209"></i><span>邮箱账号登陆</span></div>
+          <div @click="$router.back()" class="EmailLogin">
+            <div><span>其它方式登陆</span></div>
           </div>
         </div>
-        
-        <div class="phone" @click="toPath('/personal/register')"><span>手机号快捷注册</span><i
-          class="iconfont iconyoujiantou"></i>
-        </div>
-        
-        <div v-if="$route.path==='/personal'" class="ThirdPartyLogin"><i
-          class="iconfont iconweixin WeChat"></i><span>微信</span> | <i
-          class="iconfont iconqq qq"></i><span>QQ</span> | <i class="iconfont iconweibojierumoban microblog"></i><span>微博</span>
-        </div>
+      
       </div>
     </div>
   </div>
@@ -33,14 +30,12 @@
 
 <script>
   export default {
-    name: 'personal',
-    
+    name: 'personalEmail',
     methods: {
       toPath (path) {
         this.$router.push(path)
       }
     }
-    
     // data () {
     //   return {
     //     isShow: false,
@@ -62,7 +57,7 @@
 </script>
 
 <style lang="stylus" scoped>
-  @import "../../common/stylus/mixin.styl"
+  @import "../../../common/stylus/mixin.styl"
   div
     width 100%
     height 100%
@@ -219,3 +214,4 @@
             &:nth-child(2)
               text-align right
 </style>
+

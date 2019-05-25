@@ -1,31 +1,42 @@
 <template>
   <div>
-    <Search/>
-    
     <div class="Login">
-      <router-view></router-view>
       <div class="LoginFrom">
         <div class="logoWrap">
           <img src="http://yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
         </div>
+        <form action="">
+          <span class="authCode">获取验证码</span>
+          <div><input type="text" placeholder="请输入手机号"/></div>
+          <div><input type="text" placeholder="请输入短信验证码"/></div>
+          <div><input type="text" placeholder="请输入密码"/></div>
+        </form>
         
         <div class="EmailAndAccount">
           <div class="phoneLogin">
-            <div @click="toPath('/personal/phone')"><i class="iconfont iconshouji"></i><span>手机号码登陆</span></div>
+            <div><span>注冊</span></div>
           </div>
-          <div class="EmailLogin">
-            <div @click="toPath('/personal/email')"><i class="iconfont icontubiao209"></i><span>邮箱账号登陆</span></div>
+          <div class="fur-item fur-agree">
+            <label>
+              <!--Regular if7-->
+              <span>
+                <input type="checkbox">
+              </span>
+              我同意
+              <a>
+                《服务条款》
+              </a>
+              和
+              <a>
+                《网易隐私政策》
+              </a>
+            </label>
           </div>
+          <!--<div class="EmailLogin">-->
+            <!--<div><i class="iconfont icontubiao209"></i><span>邮箱账号登陆</span></div>-->
+          <!--</div>-->
         </div>
-        
-        <div class="phone" @click="toPath('/personal/register')"><span>手机号快捷注册</span><i
-          class="iconfont iconyoujiantou"></i>
-        </div>
-        
-        <div v-if="$route.path==='/personal'" class="ThirdPartyLogin"><i
-          class="iconfont iconweixin WeChat"></i><span>微信</span> | <i
-          class="iconfont iconqq qq"></i><span>QQ</span> | <i class="iconfont iconweibojierumoban microblog"></i><span>微博</span>
-        </div>
+      
       </div>
     </div>
   </div>
@@ -34,12 +45,6 @@
 <script>
   export default {
     name: 'personal',
-    
-    methods: {
-      toPath (path) {
-        this.$router.push(path)
-      }
-    }
     
     // data () {
     //   return {
@@ -62,7 +67,7 @@
 </script>
 
 <style lang="stylus" scoped>
-  @import "../../common/stylus/mixin.styl"
+  @import "../../../common/stylus/mixin.styl"
   div
     width 100%
     height 100%
@@ -84,20 +89,6 @@
           font-size 28px
           color #7F7F7F
           margin 0 10px
-        
-        i
-          font-size 45px
-          color #7F7F7F
-          margin 0 10px
-        
-        .WeChat
-          color #24DB5A
-        
-        .qq
-          color #369BCE
-        
-        .microblog
-          color #F43B51
       
       .logoWrap
         position relative
@@ -115,21 +106,9 @@
           width 300px
           height 100px
       
-      .phone
-        width 100%
-        height 60px
-        
-        span
-          
-          font-size 30px
-          line-height 60px
-        
-        i
-          font-size 30px
-      
       .EmailAndAccount
         width 95%
-        height 50%
+        height 40%
         margin 0 auto
         
         div
@@ -157,6 +136,13 @@
             color white
             background #b4282d
         
+        div
+          label
+            line-height: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
         .EmailLogin
           width 100%
           height 50%
@@ -164,7 +150,6 @@
           div
             color #b4282d
             background white
-            border 1.5px solid #b4282d
       
       form
         position relative
@@ -212,10 +197,8 @@
             height 100%
             line-height 133px
             color: #C0C0C0;
-            
-            &:nth-child(1)
-              text-align left
-            
-            &:nth-child(2)
-              text-align right
+
+
 </style>
+
+personalRegister

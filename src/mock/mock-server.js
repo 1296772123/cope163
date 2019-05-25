@@ -10,4 +10,3 @@ Mock.mock('/category', {code: 0, data: Category})
 Mock.mock('/CategoryList', {code: 0, data: CategoryList})
 Mock.mock('/HomeData', {code: 0, data: HomeData})
 
-console.log('mock---')

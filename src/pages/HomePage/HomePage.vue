@@ -146,7 +146,6 @@
       let bottom = document.querySelector('.footer_guide')
       let height = window.document.body.clientHeight - (top.clientHeight + bottom.clientHeight)
       
-      console.log(top.clientHeight)
       wrap.style.height = height + 'px'
       
       this.$nextTick(() => {

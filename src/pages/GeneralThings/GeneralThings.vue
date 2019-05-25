@@ -30,7 +30,7 @@
       </div>
       <div class="GoodsListed">
         <ul>
-          <li class="active">推荐啊啊啊啊</li>
+          <li class="active">推荐</li>
           <li>推荐</li>
           <li>推荐</li>
           <li>推荐</li>
